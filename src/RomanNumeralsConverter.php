@@ -23,6 +23,8 @@ class RomanNumeralsConverter
 
 	public static function convert(int $number)
 	{
+		static::guardAgainstInvalidNumber($number);
+
 		$solution = '';
 
 		foreach(static::$lookup as $limit => $glyph)
@@ -35,5 +37,13 @@ class RomanNumeralsConverter
 		}
 
 		return $solution;
+	}
+
+	private function guardAgainstInvalidNumber(int $number)
+	{
+		if ($number <= 0)
+		{
+			throw new \InvalidArgumentException;
+		}
 	}
 }

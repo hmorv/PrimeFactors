@@ -43,5 +43,11 @@ class RomanNumeralsConverterTest extends TestCase
 	{
 		$this->assertEquals('MMMDCCLXIV', RomanNumeralsConverter::convert(3764));
 	}
+	public function testExceptionWithZero()
+	{
+		$this->expectException(InvalidArgumentException::class);
+
+		RomanNumeralsConverter::convert(0);
+	}
 
 }
