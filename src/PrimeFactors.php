@@ -5,7 +5,7 @@ namespace App;
 class PrimeFactors
 {
 
-	public static function generate(int $number)
+	public static function generate(int $number): array
 	{
 		
 		$primes = [];
@@ -20,7 +20,6 @@ class PrimeFactors
 			}
 			
 		}
-
 
 		return $primes;
 	}
